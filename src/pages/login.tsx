@@ -1,9 +1,17 @@
+import TermsForm from '@/components/TermsForm';
 import { useAuth } from '@/context/auth';
 import apiClient from '@/lib/apiClient';
 import { useRouter } from 'next/router';
-import React, { ReactHTMLElement, useState } from 'react'
+import React, { useState } from 'react'
 
 const login = () => {
+    const [ischeckd, setischeckd] = useState(false);
+    const checkOn = () => {
+        setischeckd(true)
+    }
+    const checkOff = () => {
+        setischeckd(false)
+    }
     const [email, setemail] = useState<string>("");
     const [password, setpassword] = useState<string>("");
     const router = useRouter();
@@ -73,6 +81,12 @@ const login = () => {
                                     ログイン
                                 </button>
                             </form>
+                            <TermsForm clickOn={checkOn} clickOff={checkOff} />
+                            {ischeckd ?
+                                <h1>オン</h1>
+                                :
+                                <h1>オフ</h1>
+                            }
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,8 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import { AgreeTerms } from "@/types"
 import { Box, Button, Container } from "@mui/material"
 
-const TermsForm = () => {
+const TermsForm = ({ clickOn, clickOff }: { clickOn: () => void, clickOff: () => void }) => {
+
     const {
         handleSubmit,
         register,
@@ -45,6 +46,12 @@ const TermsForm = () => {
                 }
                 <Button type="submit">
                     同意して送信する
+                </Button>
+                <Button onClick={clickOn}>
+                    ボタン
+                </Button>
+                <Button onClick={clickOff}>
+                    offボタン
                 </Button>
             </Box>
         </Container>
