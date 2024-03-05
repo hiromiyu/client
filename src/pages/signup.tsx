@@ -1,3 +1,5 @@
+import DialogTest from "@/components/DialogTest";
+import ScrollButton from "@/components/ScrollButton";
 import TermsForm from "@/components/TermsForm";
 import apiClient from "@/lib/apiClient";
 import { useRouter } from "next/router";
@@ -28,7 +30,6 @@ const signup = () => {
             <div className=" flex-auto">
 
                 <div className="flex justify-center mt-20">
-                    <TermsForm />
                     <div className="w-9/12 border bg-white">
                         <div className="my-16 text-center">
                             <h2 className="text-4xl font-bold">新規登録</h2>
@@ -76,6 +77,8 @@ const signup = () => {
                                     新規登録
                                 </button>
                             </form>
+                            <ScrollButton />
+                            <DialogTest />
                         </div>
                     </div>
                 </div>
