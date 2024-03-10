@@ -3,17 +3,32 @@ import { useState } from 'react';
 
 interface ListItem {
     id: number;
-    text: string;
+    name: string;
 }
 
+const appList = [
+    {
+        id: 1,
+        name: "アプリ１",
+    },
+    {
+        id: 2,
+        name: "アプリ２",
+    },
+    {
+        id: 3,
+        name: "アプリ３",
+    },
+];
+
 const RegisterForApp: React.FC = () => {
-    const [items, setItems] = useState<ListItem[]>([]);
+    const [items, setItems] = useState<ListItem[]>([...appList]);
     const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
 
     const handleAddItem = () => {
         const newItem: ListItem = {
             id: items.length + 1,
-            text: `アプリ ${items.length + 1}`,
+            name: `アプリ ${items.length + 1}`,
         };
         setItems([...items, newItem]);
     };
@@ -62,7 +77,7 @@ const RegisterForApp: React.FC = () => {
                                     src="anya31.jpg"
                                     alt="アーニャ"
                                 />
-                                <Typography>{item.text}</Typography>
+                                <Typography>{item.name}</Typography>
                             </Box>
                             <Box>
                                 <Button variant="outlined" style={{ marginRight: "2px" }}

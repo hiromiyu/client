@@ -11,6 +11,12 @@ const Navbar = () => {
                 <Link href="/" className='text-2xl'>SNS</Link>
                 <nav>
                     <ul className='flex space-x-4'>
+                        <Link
+                            href="/test"
+                            className='bg-white text-gray-900 py-2 px-3 rounded-lg font-medium'
+                        >
+                            テスト
+                        </Link>
                         {user ? (<>
                             <Link
                                 href={`/profile/${user.id}`}

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Timeline from "@/components/Timeline";
-import RegisterForApp from "@/components/registerForApp";
+import RegisterForApp from "@/components/RegisterForApp";
 
 
 export default function Home() {
