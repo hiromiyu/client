@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Timeline from "@/components/Timeline";
+import RegisterForApp from "@/components/registerForApp";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
 
       <div>
+        <RegisterForApp />
         <Timeline />
       </div>
     </>

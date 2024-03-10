@@ -1,7 +1,6 @@
 import { useAuth } from '@/context/auth';
 import Link from 'next/link'
 import React from 'react'
-import InstallPWA from './InstallPWA';
 
 const Navbar = () => {
     const { user, logout } = useAuth();
@@ -10,12 +9,6 @@ const Navbar = () => {
         <header className='bg-gray-500 p-4 text-white'>
             <div className='container mx-auto flex justify-between items-center'>
                 <Link href="/" className='text-2xl'>SNS</Link>
-                {user ?
-                    <button className='bg-white text-gray-900 py-2 px-3 rounded-lg font-medium'>
-                        アプリを<br />インストール
-                    </button> : null
-                }
-                <InstallPWA />
                 <nav>
                     <ul className='flex space-x-4'>
                         {user ? (<>
